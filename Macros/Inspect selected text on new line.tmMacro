@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>commands</key>
+	<array>
+		<dict>
+			<key>argument</key>
+			<dict>
+				<key>beforeRunningCommand</key>
+				<string>nop</string>
+				<key>command</key>
+				<string>#!/usr/bin/env ruby -wKU
+
+require File.join(ENV["TM_SUPPORT_PATH"], "lib/exit_codes.rb")
+require File.join(ENV["TM_SUPPORT_PATH"], "lib/escape.rb")
+
+
+
+text = ENV['TM_SELECTED_TEXT']
+puts_argument = %|puts "[LOG] #{text} : \#\{#{text}.inspect\}"|
+
+TextMate.exit_insert_snippet(e_sn(text) + "${0:" + e_snp(puts_argument) + "}")
+
+
+
+
+#require File.join(ENV["TM_SUPPORT_PATH"], "lib/exit_codes.rb")
+#require File.join(ENV["TM_SUPPORT_PATH"], "lib/escape.rb")
+
+#if ENV['TM_SELECTED_TEXT'] != nil
+#	TextMate.exit_insert_snippet(e_sn(ENV['TM_SELECTED_TEXT']) + "${0:" + e_snp(ENV['TM_SELECTED_TEXT']) + "}")
+#else
+#	col   = ENV['TM_LINE_INDEX'].to_i
+#	TextMate.exit_insert_text(ENV['TM_CURRENT_LINE'][col..-1] + "\n" + ENV['TM_CURRENT_LINE'][0...col])
+#end</string>
+				<key>fallbackInput</key>
+				<string>word</string>
+				<key>input</key>
+				<string>selection</string>
+				<key>keyEquivalent</key>
+				<string>@P</string>
+				<key>name</key>
+				<string>Inspect Selected Text</string>
+				<key>output</key>
+				<string>afterSelectedText</string>
+				<key>scope</key>
+				<string>source.ruby</string>
+				<key>uuid</key>
+				<string>39CB2885-B346-42CB-9F30-0A32EDE1BA57</string>
+			</dict>
+			<key>command</key>
+			<string>executeCommandWithOptions:</string>
+		</dict>
+		<dict>
+			<key>command</key>
+			<string>cut:</string>
+		</dict>
+		<dict>
+			<key>command</key>
+			<string>moveToEndOfParagraph:</string>
+		</dict>
+		<dict>
+			<key>command</key>
+			<string>insertNewline:</string>
+		</dict>
+		<dict>
+			<key>command</key>
+			<string>paste:</string>
+		</dict>
+	</array>
+	<key>keyEquivalent</key>
+	<string>^@P</string>
+	<key>name</key>
+	<string>Inspect selected text on new line</string>
+	<key>scope</key>
+	<string>source.ruby.rails</string>
+	<key>uuid</key>
+	<string>121613F8-206D-4D6B-8B17-B12DA2983055</string>
+</dict>
+</plist>

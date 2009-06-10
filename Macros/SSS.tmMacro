@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>commands</key>
+	<array>
+		<dict>
+			<key>argument</key>
+			<dict>
+				<key>beforeRunningCommand</key>
+				<string>nop</string>
+				<key>command</key>
+				<string>#!/usr/bin/env sh
+
+cat &lt;&lt;'RUBYEOF' &gt; /tmp/ruby-amp-$$.rb
+  require 'rubygems'
+  require 'appscript'
+
+  include Appscript
+
+  def find_specific_test
+    name = ''
+    File.open(ENV['TM_FILEPATH']) do |f|
+      lines     = f.read.split("\n")[0...ENV['TM_LINE_NUMBER'].to_i].reverse
+      name      = lines.find { |line| line =~ /^\s*test[_a-z0-9]*?/i }.to_s.sub(/^\s*(.*?):.*$/) { $1 }
+    end
+    
+    return name if !name.empty?
+    
+    raise "Error:  This doesn't appear to be a TestCase."
+  end
+
+  original_document = File.read(ENV['TM_FILEPATH'])
+  puts original_document.gsub(/test\s*:\s*['"](.*)['"]/, "test : '#{find_specific_test}'")
+RUBYEOF
+
+${TM_RUBY:-ruby} /tmp/ruby-amp-$$.rb; exit_status=$?; rm /tmp/ruby-amp-$$.rb; exit $exit_status
+</string>
+				<key>input</key>
+				<string>document</string>
+				<key>output</key>
+				<string>replaceDocument</string>
+			</dict>
+			<key>command</key>
+			<string>executeCommandWithOptions:</string>
+		</dict>
+	</array>
+	<key>keyEquivalent</key>
+	<string>^~@l</string>
+	<key>name</key>
+	<string>SSS</string>
+	<key>scope</key>
+	<string>text.html</string>
+	<key>uuid</key>
+	<string>79A90671-39A7-4115-813B-DAC6A40488B8</string>
+</dict>
+</plist>

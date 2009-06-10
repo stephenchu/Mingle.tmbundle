@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>name</key>
+	<string>Mingle</string>
+	<key>ordering</key>
+	<array>
+		<string>AF2ED637-2D6A-4104-B645-4CC77447610D</string>
+		<string>39CB2885-B346-42CB-9F30-0A32EDE1BA57</string>
+		<string>121613F8-206D-4D6B-8B17-B12DA2983055</string>
+		<string>DB1BF2BD-870E-4CE4-B024-5A5325777674</string>
+		<string>151DEB4F-346A-4164-B141-76431D06BD42</string>
+		<string>F6C46876-C0D0-4CF0-B1A5-51342A80F37A</string>
+		<string>D8A8271F-C98F-4A3C-AFF5-B6378741BDC1</string>
+		<string>3D5EBDB1-FF08-4770-9FA7-6BE9AB2E590A</string>
+	</array>
+	<key>uuid</key>
+	<string>D4B3F2DA-4BB5-44D4-824B-DC5CF6C0E920</string>
+</dict>
+</plist>

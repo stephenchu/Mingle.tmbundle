@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveModifiedFiles</string>
+	<key>command</key>
+	<string>#!/usr/bin/env sh
+
+cat &lt;&lt;'RUBYEOF' &gt; /tmp/ruby-amp-$$.rb
+  require 'rubygems'
+  require 'appscript'
+
+  include Appscript
+
+  term = app("Terminal")
+  term.activate
+  term.do_script "cd \"#{ENV['TM_PROJECT_DIRECTORY']}\" &amp;&amp; script/jruby \"#{ENV['TM_FILEPATH']}\""
+RUBYEOF
+
+${TM_RUBY:-ruby} /tmp/ruby-amp-$$.rb; exit_status=$?; rm /tmp/ruby-amp-$$.rb; exit $exit_status
+</string>
+	<key>input</key>
+	<string>document</string>
+	<key>keyEquivalent</key>
+	<string>@j</string>
+	<key>name</key>
+	<string>Run JRuby unit tests</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.ruby</string>
+	<key>uuid</key>
+	<string>D8A8271F-C98F-4A3C-AFF5-B6378741BDC1</string>
+</dict>
+</plist>

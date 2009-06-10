@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>nop</string>
+	<key>command</key>
+	<string>#!/usr/bin/env ruby -wKU
+
+require File.join(ENV["TM_SUPPORT_PATH"], "lib/exit_codes.rb")
+require File.join(ENV["TM_SUPPORT_PATH"], "lib/escape.rb")
+
+
+
+text = ENV['TM_SELECTED_TEXT']
+puts_argument = %|puts "[LOG] #{text} : \#\{#{text}.inspect\}"|
+
+TextMate.exit_insert_snippet(e_sn(text) + "${0:" + e_snp(puts_argument) + "}")
+</string>
+	<key>fallbackInput</key>
+	<string>word</string>
+	<key>input</key>
+	<string>selection</string>
+	<key>keyEquivalent</key>
+	<string>@P</string>
+	<key>name</key>
+	<string>Inspect selected text</string>
+	<key>output</key>
+	<string>afterSelectedText</string>
+	<key>scope</key>
+	<string>source.ruby</string>
+	<key>uuid</key>
+	<string>39CB2885-B346-42CB-9F30-0A32EDE1BA57</string>
+</dict>
+</plist>
