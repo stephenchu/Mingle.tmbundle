@@ -11,6 +11,8 @@
 	<string>word</string>
 	<key>input</key>
 	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^~@l</string>
 	<key>name</key>
 	<string>Open database.yml</string>
 	<key>output</key>

@@ -36,7 +36,7 @@ ${TM_RUBY:-ruby} /tmp/ruby-amp-$$.rb; exit_status=$?; rm /tmp/ruby-amp-$$.rb; ex
 	<key>keyEquivalent</key>
 	<string>@R</string>
 	<key>name</key>
-	<string>-- Run focused Javascript unit test</string>
+	<string>Run focused Javascript unit test</string>
 	<key>output</key>
 	<string>replaceDocument</string>
 	<key>scope</key>
