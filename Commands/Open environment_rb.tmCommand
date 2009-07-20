@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>beforeRunningCommand</key>
+	<string>saveModifiedFiles</string>
+	<key>command</key>
+	<string>osascript -e "tell app \"TextMate\" to get url \"txmt://open/?url=file://$TM_PROJECT_DIRECTORY/config/environment.rb\""
+</string>
+	<key>input</key>
+	<string>none</string>
+	<key>keyEquivalent</key>
+	<string>^~@e</string>
+	<key>name</key>
+	<string>Open environment.rb</string>
+	<key>output</key>
+	<string>discard</string>
+	<key>scope</key>
+	<string>source.ruby.rails, text.html.ruby</string>
+	<key>uuid</key>
+	<string>C5FC830C-AF28-4FEB-90C2-E14C890059BD</string>
+</dict>
+</plist>
