@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>.inspect</string>
+	<string>${0:console.dir(${TM_SELECTED_TEXT});}${TM_SELECTED_TEXT}</string>
 	<key>keyEquivalent</key>
-	<string>^i</string>
+	<string>^@I</string>
 	<key>name</key>
-	<string>.inspect</string>
+	<string>console.dir</string>
 	<key>scope</key>
-	<string>source.ruby.rails, text.html.ruby</string>
+	<string>source.js</string>
 	<key>uuid</key>
-	<string>2C2934F8-70E1-41EE-9128-A926F8861F2C</string>
+	<string>43188A57-3D54-4016-800F-AFA3F792EB04</string>
 </dict>
 </plist>

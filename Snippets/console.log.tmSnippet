@@ -3,14 +3,14 @@
 <plist version="1.0">
 <dict>
 	<key>content</key>
-	<string>.inspect</string>
-	<key>keyEquivalent</key>
-	<string>^i</string>
+	<string>console.log("[LOG] ${1:variable}: " + $1);</string>
 	<key>name</key>
-	<string>.inspect</string>
+	<string>console.log</string>
 	<key>scope</key>
-	<string>source.ruby.rails, text.html.ruby</string>
+	<string>source.js</string>
+	<key>tabTrigger</key>
+	<string>log</string>
 	<key>uuid</key>
-	<string>2C2934F8-70E1-41EE-9128-A926F8861F2C</string>
+	<string>237EE4D7-625D-4F65-943C-224D3D628809</string>
 </dict>
 </plist>
