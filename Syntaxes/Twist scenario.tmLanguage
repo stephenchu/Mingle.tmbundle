@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>scn</string>
+	</array>
+	<key>name</key>
+	<string>Twist scenario</string>
+	<key>scopeName</key>
+	<string>source.twist.scenario</string>
+	<key>uuid</key>
+	<string>AF8FD4E5-D588-41FA-A12D-7A6D083F5EBB</string>
+</dict>
+</plist>

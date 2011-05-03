@@ -13,7 +13,7 @@ require File.join(ENV["TM_SUPPORT_PATH"], "lib/escape.rb")
 
 
 text = ENV['TM_SELECTED_TEXT']
-puts_argument = %|puts "[LOG] #{text} : \#\{#{text}.inspect\}"|
+puts_argument = %|puts "[LOG] #{text} : \#\{#{text.gsub('"', '\"')}.inspect\}"|
 
 TextMate.exit_insert_snippet(e_sn(text) + "${0:" + e_snp(puts_argument) + "}")
 </string>
